@@ -22,7 +22,7 @@ Please report any issues with running it to
 [the author](mailto:p.d.mosses@swansea.ac.uk).
 The table and rule numbers below refer to the above paper.
 
-<details markdown="block">
+<details open markdown="block">
   <summary>
     CONTENTS
   </summary>
