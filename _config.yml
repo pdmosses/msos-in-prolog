@@ -1,0 +1,12 @@
+remote_theme: pmarsceill/just-the-docs
+title: MSOS in Prolog
+description: Modular structural operational semantics (MSOS) in Prolog
+repository: "pdmosses/msos-in-prolog"
+# Aux links for the upper right navigation
+aux_links:
+  "msos-in-prolog on GitHub":
+    - "//github.com/pdmosses/msos-in-prolog"
+plugins:
+    - jekyll-seo-tag
+compress_html:
+  blanklines: true
