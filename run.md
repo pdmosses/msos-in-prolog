@@ -1,5 +1,5 @@
 ---
-title: run
+title: Running MSOS in Prolog
 ---
 
 # Running MSOS in Prolog
@@ -18,6 +18,7 @@ It has now been updated and tested with SWI-Prolog 8.0.
 
 The Prolog code listed below is available at
 <https://github.com/pdmosses/msos-in-prolog/blob/master/run.pro>.
+A few (very) simple [test programs](tests) are provided.
 Please report any issues with running it to
 [the author](mailto:p.d.mosses@swansea.ac.uk).
 The table and rule numbers below refer to the above paper.
@@ -121,29 +122,6 @@ Layout
 lex(LS)     --> LS, layout_star.
 layout_star --> [C], {code_type(C,space)}, layout_star.
 layout_star --> [].
-```
-
-Sanity-testing parsing
-```prolog
-test(P, S) :- phrase(prog(P), S).
-
-test1(P) :- test(P, "
-var a := 1; a := a+1
-").
-
-test2(P) :- test(P, "
-const n = 5;
-var a := 0;
-var b := 1;
-while n > a do {b := 2*b; a := a+1}
-").
-
-test3(P) :- test(P, "
-var a:=0;
-a:=a+1;
-a:=a-2;
-a:=a*3
-").
 ```
 
 ## Illustrative language semantics
