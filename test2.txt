@@ -1,0 +1,4 @@
+const n = 5;
+var a := 0; 
+var b := 1;
+while n > a do {b := 2*b; a := a+1}
