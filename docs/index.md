@@ -1,5 +1,7 @@
 ---
+layout: default
 title: MSOS in Prolog
+nav_order: 0
 ---
 
 # Modular structural operational semantics (MSOS) in Prolog
