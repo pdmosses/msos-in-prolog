@@ -121,8 +121,8 @@ All the parsing queries pretty-print the resulting tree `T` by default.
 Please report any issues with parsing or running programs to
 [the author](mailto:p.d.mosses@swansea.ac.uk).
 
-[run.pro]: /run.pro
+[run.pro]: https://github.com/pdmosses/msos-in-prolog/blob/master/run.pro
 
-[test2]: /test2.txt
+[test2]: https://github.com/pdmosses/msos-in-prolog/blob/master/test2.txt
 
 [a paper about MSOS]: https://pdmosses.github.io/papers/Mosses2004MSOS/
