@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # msos-in-prolog
 
 Modular structural operational semantics in Prolog
