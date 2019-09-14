@@ -48,9 +48,10 @@ The MSOS specified in Prolog in this website relates to the following paper:
   DOI: [10.1016/j.jlap.2004.03.008](https://doi.org/10.1016/j.jlap.2004.03.008)   
   Preprint: [Mosses2004MSOS](https://pdmosses.github.io/papers/Mosses2004MSOS/)
 
-The Prolog code was originally made available at `http://www.brics.dk/~pdm/JLAP-MSOS.pl`,
-and subsequently at `http://cs.swansea.ac.uk/~cspdm/JLAP-MSOS.pl`.
-It has now been updated and tested with SWI-Prolog 8.0.
+The Prolog code was originally made available as a single file at 
+`http://www.brics.dk/~pdm/JLAP-MSOS.pl`, and subsequently at 
+`http://cs.swansea.ac.uk/~cspdm/JLAP-MSOS.pl`. It has now been updated, split
+into several files, and tested with SWI-Prolog 8.0.
 
 The accompanying web pages assume familiarity with the above paper, and with
 elementary Prolog programming:
