@@ -13,18 +13,18 @@ reformulation when further constructs are added to the language.
 MSOS thus provides an exceptionally high degree of modularity in language
 descriptions, removing a shortcoming of the original SOS framework.
 
-The file [run.pro] illustrates how MSOS rules for the dynamic semantics of a
+This reository illustrates how MSOS rules for the dynamic semantics of a
 simple imperative programming language can be written as Prolog clauses. The
 language and the rules are from [a paper about MSOS] published in 2004.
 The Prolog clauses correspond closely to the MSOS rules specified in the paper.
 
 Running programs using the Prolog clauses tests whether the MSOS rules specify
-the expected behaviour. For example, running the [test2] program is expected to
-terminate with the value `32` stored in the variable bound to identifier `b`;
-the following output from the query `parsef_run('test2.txt')` shows that this
-is indeed the case:
+the expected behaviour. For example, running the [`tests/2.txt`] program is
+expected to terminate with the value `32` stored in the variable bound to `b`;
+the following output from the query `parsef_run('../tests/2.txt')` shows that
+this is indeed the case:
 ```
-?- parsef_run('test2.txt').
+?- parsef_run('../tests/2.txt').
 
 const n = 5;
 var a := 0;
@@ -38,9 +38,9 @@ true .
 ```
 (`b` was bound to location `loc(2)`, and `sigma+` is the final store.)
 
-# Specifying MSOS in Prolog
+## Specifying MSOS in Prolog
 
-The MSOS specified in Prolog in this website relates to the following paper:
+The MSOS specified in Prolog in this website is from the following paper:
 
 - *Modular Structural Operational Semantics (MSOS)*  
   Peter D. Mosses  
@@ -51,7 +51,8 @@ The MSOS specified in Prolog in this website relates to the following paper:
 The Prolog code was originally made available as a single file at 
 `http://www.brics.dk/~pdm/JLAP-MSOS.pl`, and subsequently at 
 `http://cs.swansea.ac.uk/~cspdm/JLAP-MSOS.pl`. It has now been updated, split
-into several files, and tested with SWI-Prolog 8.0.
+into smaller files, and tested with SWI-Prolog 8.0. To obtain it, download or
+clone the [msos-in-prolog repository].
 
 The accompanying web pages assume familiarity with the above paper, and with
 elementary Prolog programming:
@@ -59,27 +60,34 @@ elementary Prolog programming:
 - [Illustrative language syntax](syntax) uses a definite clause grammar (DCG)
   to specify the syntax of illustrative programming language constructs.
 
-- [Illustrative language semantics](semantics) uses a a representation of
-  MSOS rules as Prolog clauses to specify the semantics of illustrative
-  programming language constructs.
+- [Illustrative language semantics](semantics) uses a straightforward
+  representation of MSOS rules as Prolog clauses to specify the semantics of
+  illustrative programming language constructs. The rule numbers shown in the
+  code correspond to those in the above paper, to facilitate comparison.
 
 - [Labels and computations](msos) defines Prolog predicates corresponding to
   steps and computations in MSOS, independently of specified languages.
 
-- [User interface](run) defines the Prolog predicates for parsing and running
+- [User interface](run) defines Prolog predicates for parsing and running
   programs in specified languages.
 
 - [Tests](tests) provides a few (very) simple test programs.
 
-# Executing MSOS in Prolog
+Note that for conciseness (and portability), module interfaces are not specified
+at all; moreover, the code does not attempt to exemplify Prolog best practice.
 
-`['run.pro']` loads the Prolog code for parsing and running programs.
-The Prolog code embedded in the web pages is available at
-<https://github.com/pdmosses/msos-in-prolog>.
-The rule numbers shown in the code correspond to those in the above paper,
-to support comparison.
+## Executing MSOS in Prolog
 
-## Parsing and running programs
+The file `run.pro` loads the Prolog code for parsing and running programs.
+Using SWI-Prolog from the command line:
+```
+cd .../code
+swipl -l run.pro
+```
+Using the Eclipse plugin PDT, the working directory should be set to `.../code`
+in the Prolog console before consulting `run.pro`.
+
+### Parsing and running programs
 
 `parsef_run(F)` parses file `F` as `prog(T)`, then calls `run(T)`.
 
@@ -89,7 +97,7 @@ to support comparison.
 
 `parse_run(S,N)` parses string `S` as `prog(T)`, then calls `run(T,N)`.
 
-## Parsing programs
+### Parsing programs
 
 `parsef_prog(F,T)` parses file `F` as `prog(T)`.
 
@@ -99,7 +107,7 @@ to support comparison.
 
 `parse_prog(S)` parses string `S` as `prog(_)`.
 
-## Running parsed programs
+### Running parsed programs
 
 `run(T)` starts a computation with initial state `T`
 and initial label specified by `init_label`.
@@ -111,7 +119,7 @@ If the computation terminates in `N` or fewer steps,
 it prints the final state, otherwise it prints the
 state after the `N`th step.
 
-## Printing program trees
+### Printing program trees
 
 `print_tree(T)` pretty-prints the tree `T`.
 All the parsing queries pretty-print the resulting tree `T` by default.
@@ -122,8 +130,10 @@ All the parsing queries pretty-print the resulting tree `T` by default.
 Please report any issues with parsing or running programs to
 [the author](mailto:p.d.mosses@swansea.ac.uk).
 
-[run.pro]: https://github.com/pdmosses/msos-in-prolog/blob/master/run.pro
+[msos-in-prolog repository]: https://github.com/pdmosses/msos-in-prolog
 
-[test2]: https://github.com/pdmosses/msos-in-prolog/blob/master/test2.txt
+[`run.pro`]: https://github.com/pdmosses/msos-in-prolog/blob/master/code/run.pro
+
+[`tests/2.txt`]: https://github.com/pdmosses/msos-in-prolog/blob/master/tests/2.txt
 
 [a paper about MSOS]: https://pdmosses.github.io/papers/Mosses2004MSOS/
