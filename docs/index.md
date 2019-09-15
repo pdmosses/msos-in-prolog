@@ -21,8 +21,7 @@ The Prolog clauses correspond closely to the MSOS rules specified in the paper.
 Running programs using the Prolog clauses tests whether the MSOS rules specify
 the expected behaviour. For example, running the [`tests/2.txt`] program is
 expected to terminate with the value `32` stored in the variable bound to `b`;
-the following output from the query `parsef_run('../tests/2.txt')` shows that
-this is indeed the case:
+the result of the appropriate Prolog query confirms that expectation:
 ```
 ?- parsef_run('../tests/2.txt').
 
