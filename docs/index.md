@@ -130,7 +130,7 @@ Please report any issues with parsing or running programs to
 
 ## Related projects
 
-- [Prolog MSDF Tools](https://pdmosses.github.io/prolog-msdf-tools):
+- [Prolog MSOS Tool](https://pdmosses.github.io/prolog-msos-tool):
   Generation of Prolog interpreters from MSDF (a meta-language for specifying
   MSOS of programming languages), including lecture notes.
 
