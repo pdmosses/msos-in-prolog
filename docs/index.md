@@ -13,7 +13,7 @@ reformulation when further constructs are added to the language.
 MSOS thus provides an exceptionally high degree of modularity in language
 descriptions, removing a shortcoming of the original SOS framework.
 
-This reository illustrates how MSOS rules for the dynamic semantics of a
+This repository illustrates how MSOS rules for the dynamic semantics of a
 simple imperative programming language can be written as Prolog clauses. The
 language and the rules are from [a paper about MSOS] published in 2004.
 The Prolog clauses correspond closely to the MSOS rules specified in the paper.
@@ -125,9 +125,18 @@ All the parsing queries pretty-print the resulting tree `T` by default.
 
 `no_pretty` turns printing off, `pretty` turns it back on.
 
-
 Please report any issues with parsing or running programs to
 [the author](mailto:p.d.mosses@swansea.ac.uk).
+
+## Related projects
+
+- [Prolog MSDF Tools](https://pdmosses.github.io/prolog-msdf-tools):
+  Generation of Prolog interpreters from MSDF (a meta-language for specifying
+  MSOS of programming languages), including lecture notes.
+
+- [CBS](https://plancomps.github.io/CBS-beta/):
+  A framework for component-based specification of programming languages using
+  MSOS.
 
 [msos-in-prolog repository]: https://github.com/pdmosses/msos-in-prolog
 
